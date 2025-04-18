@@ -25,7 +25,7 @@
         public string Reason { get; set; }
         public DateTime CreatedAt { get; set; }
 
-        // Navigation property to Employee
+        
         public Employee? Employee { get; set; }
     }
 
