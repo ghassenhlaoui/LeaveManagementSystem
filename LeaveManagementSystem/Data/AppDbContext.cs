@@ -13,7 +13,7 @@ namespace LeaveManagementSystem.Data
             Database.EnsureCreated();
             Seed();
         }
-
+        // Seeding Data for employees and leaveRequests
         private void Seed()
         {
             if (!Employees.Any())
