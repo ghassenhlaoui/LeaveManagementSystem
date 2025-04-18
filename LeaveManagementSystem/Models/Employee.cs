@@ -9,7 +9,7 @@ namespace LeaveManagementSystem.Models
         public string Department { get; set; }
         public DateTime JoiningDate { get; set; }
 
-        // Navigation property for LeaveRequests
+        
         [JsonIgnore]
         public List<LeaveRequest>? LeaveRequests { get; set; }
     }
