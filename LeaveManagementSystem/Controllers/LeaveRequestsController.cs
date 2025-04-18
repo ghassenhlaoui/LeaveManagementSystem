@@ -16,7 +16,7 @@ namespace LeaveManagementSystem.Controllers
         {
             this.appDbContext = appDbContext;
         }
-
+        //Get All LeaveRequest
         [HttpGet]
         public async Task<ActionResult<LeaveRequest>> GetLeaveRequests()
         {
@@ -26,7 +26,7 @@ namespace LeaveManagementSystem.Controllers
 
             return Ok(leaveRequests);
         }
-
+        //Get LeaveRequest By Id
         [HttpGet("{id:int}")]
         public async Task<ActionResult<LeaveRequest>> GetLeaveRequestByID(int id)
         {
@@ -37,7 +37,7 @@ namespace LeaveManagementSystem.Controllers
             }
             return NotFound("LeaveRequest is not Found");
         }
-
+        // Add New LeaveRequest
         [HttpPost]
         public async Task<ActionResult<LeaveRequest>> AddLeaveRequest(LeaveRequest leaveRequest)
         {
@@ -49,7 +49,7 @@ namespace LeaveManagementSystem.Controllers
             }
             return BadRequest("Can't add new LeaveRequest");
         }
-
+        // Update LeaveRequest
         [HttpPut]
         public async Task<ActionResult<LeaveRequest>> UpdateLeaveRequest(int id, LeaveRequest leaveRequest)
         {
@@ -59,7 +59,7 @@ namespace LeaveManagementSystem.Controllers
             await appDbContext.SaveChangesAsync();
             return NoContent();
         }
-
+        //Delete LeaveRequest By ID
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteLeaveRequest(int id)
         {
@@ -70,7 +70,7 @@ namespace LeaveManagementSystem.Controllers
             await appDbContext.SaveChangesAsync();
             return NoContent();
         }
-
+        // Get LeaveRequest with many Filters
         [HttpGet("filter")]
         public async Task<ActionResult<IEnumerable<LeaveRequest>>> FilterLeaveRequests(
             int? employeeId, LeaveType? leaveType, LeaveStatus? status, DateTime? startDate, DateTime? endDate,
