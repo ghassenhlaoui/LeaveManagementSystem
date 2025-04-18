@@ -3,7 +3,7 @@ A .NET Core Web API for managing employee leave requests
 
 ## Technologies
 
-- .NET Core Web API  
+- .NET 8 Core Web API  
 - Entity Framework Core  
 - SQLite Database
 
